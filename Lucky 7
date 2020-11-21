@@ -1,0 +1,185 @@
+'''
+Developed by- PRIYANSHU AND RAJDEEP
+CLASS SECTION-11 J
+DATE-20/11/19
+
+'''
+import time
+import random
+min = 1
+max = 6
+choice = ['=7','<7','>7'] 
+roll_again = 1
+
+score = 0
+name = input("Enter your username :> ")
+print()
+print("Welcome "+name+" to LUCKY 7 Game")
+print()
+print("You have only 5 chances, so good luck :)")
+print("The choices are",choice)
+print('''For '=7' = $50 ; For '<7'= $30 ; For '>7'=$30; Else -$20''')
+print()
+x = int(input("Place your bet ( strictly upto 30)  "))
+print()
+while roll_again <= 5:
+    ch = input("Choose the limit:::: ")
+    print("Rolling the dices....")
+    print("The values are....")
+    a = random.randint(min, max)
+    b = random.randint(min, max)
+    print(a)
+    print(b)
+    print("sum is",a+b)
+    if ch == choice[0] and a+b==7:
+        print("You won")
+        score += 50
+    elif ch == choice[1] and a+b<7:
+        print("You won")
+        score += 30
+    elif ch == choice[2] and a+b>7:
+        print("You won")
+        score += 30
+    else:
+        print("You lost")
+        score -= 20
+        
+    roll_again += 1
+print("Final Score -->",score)
+y = x + score
+print(" Money left  = Bet placed + Score ")
+if y <= 0:
+    print("You have to give",-(y),"$, You haven't cleared level 1 ")
+else: print("You are left with",y,"$, You have cleared level 1")
+print()
+print()
+
+if y <= 0:
+    print('''You haven't cleared level 1 but we can lend you $100 to play level 2
+          and to clear debt of level 1''')
+    print("You have to return with 20% interest that is $120 at the end of the game")
+    m=input("Do you want to borrow(yes/no): ")
+    print()
+    if m=="yes" or m=="y" or m=='Yes':
+        y+=100
+        print("                           Welcome to level 2")
+        print("Participating fee $10")
+        y-=10
+        print("Now you have",y)
+        print("Game of riddles")
+        print("$100 for correct answer and -$40 for wrong answer ")
+        print()
+        print('''Who makes it, has no need of it.
+                 Who buys it, has no use for it.
+                 Who uses it can neither see nor feel it.
+                 What is it?''')
+        print()
+        n = input("Enter your answer ")
+        if n=="coffin" or n=="Coffin" :
+            y+=100
+            time.sleep(3)
+            print("Right")
+        else :
+            y-=40
+            print("Wrong")
+            time.sleep(3)
+            print("The right answer is coffin")
+        print()    
+        print('''I am not alive, but I grow; I don't have lungs, but I need air;
+                 I don't have a mouth, but water kills me. What am I?''')
+        print()
+        q=input("Enter your answer ")
+        if q=="fire" or q=="Fire" :
+            y+=100
+            time.sleep(3)
+            print("Right")
+        else :
+            y-=40
+            print("Wrong")    
+            time.sleep(3)
+            print("The right answer is fire")
+        print()
+        print("The more you take, the more you leave behind. What am I?")
+        print()
+        h=input("Enter your answer ")
+        if h=="footsteps" or h=="Footsteps":
+            y+=100
+            time.sleep(3)
+            print("Right")
+        else :
+            y-=40
+            print("Wrong")
+            time.sleep(3)
+            print("The right answer is footsteps")
+        print()
+        print("Final score", y)
+        print("Money left = Final score - $120(Money lended)")
+        if y <= 0:
+            print("You have to give",-(y)+120,"$",)
+        else:
+            print("You are left with",y-120,"$",)
+        print()
+        print("Game over")
+    
+    else:
+        print("Good playing with you, Better luck next time")
+
+
+else:
+    print("                              Welcome to level 2")
+    print("Participating fee $10")
+    y-=10
+    print("Now you have",y)
+    print("Game of riddles")
+    print("$100 for correct answer and -$40 for wrong answer")
+    print()
+  
+    print('''Who makes it, has no need of it.
+             Who buys it, has no use for it.
+             Who uses it can neither see nor feel it.
+             What is it?''')
+    print()
+    n = input("Enter your answer ")
+    if n=="coffin" or h=="Coffin" :
+        y+=100
+        time.sleep(3)
+        print("Right")
+    else :
+        y-=40
+        print("Wrong")
+        time.sleep(3)
+        print("The right answer is coffin")
+    print()   
+    print('''I am not alive, but I grow; I don't have lungs, but I need air;
+             I don't have a mouth, but water kills me. What am I?''')
+    print()
+    q=input("Enter your answer ")
+    if q=="fire" or h=="Fire":
+        y+=100
+        time.sleep(3)
+        print("Right")
+    else :
+        y-=40
+        print("Wrong")
+        time.sleep(3)
+        print("The right answer is fire")
+    print()    
+    print("The more you take, the more you leave behind. What am I?")
+    print()
+    h=input("Enter your answer ")
+    if h=="footsteps" or h=="Footsteps":
+        y+=100
+        time.sleep(3)
+        print("Right")
+    else :
+        y-=40
+        print("Wrong")
+        time.sleep(3)
+        print("The right answer is footsteps")
+    print()
+    print("Final score", y)
+    if y <= 0:
+        print("You have to give",-(y),"$",)
+    else: print("You are left with",y,"$",)
+    print()
+    print("Game over")
