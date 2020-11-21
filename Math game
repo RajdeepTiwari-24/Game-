@@ -1,0 +1,45 @@
+'''
+Developed by : Rajdeep and Priyanshu
+Date : 18/12/2019
+Class : 11-J
+'''
+import random
+import time
+print("Got a mathematician's DNA ????")
+min=1
+max=15
+n=score=0
+ti=0
+time.sleep(1)
+x=input("Yes or No  ")
+if x=="Yes" or x=="yes":
+    print("Welcome to Matquick")
+    print()
+    print("So you are ready to take the challenge")
+    print("where you have to solve 5 problems in minimum time possible")
+    print("But if you take more than 60 seconds, then you will be disqualified")
+    print()
+    y = input("Enter your name  ")
+    dt = time.time()
+    while n<5:
+        if ti>60:
+            print("Time Out")
+            break
+        else :
+            z1=random.randint(min,max)
+            c1=random.randint(min,max)
+            b1=random.randint(min,max)
+            n1=random.randint(min,max)
+            print(z1,'*',c1,'+',b1,'-',n1)
+            q=int(input("Enter your answer "))
+            if q == z1*c1+b1-n1:
+                print("right")
+                score+=1
+            else: print("wrong")
+            print()
+            n+=1
+            ti= time.time() - dt
+    print( "Total time taken to solve ",round(ti,4),"seconds")
+    print("Total no of right answers ", score)
+else :
+    print("Contact your maths teacher")
